@@ -246,7 +246,7 @@
       "download_detour": "direct"
     },
     "geosite": {
-      "download_url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.db",
+      "download_url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/meta-rules-dat@release/geosite-lite.db",
       "download_detour": "direct"
     },
     "rules": [
