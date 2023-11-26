@@ -380,51 +380,58 @@
         "outbound": "direct"
       },
       {
-        "geosite":"proxy",
-        "outbound":"🌏 !cn"
-      },      
-      {
-        "geosite":"geolocation-!cn",
-        "outbound":"🌏 !cn"
-      },      
-      {
-        "geosite":"netflix",
-        "outbound":"🎥 奈飞视频"
+        "geosite": "netflix",
+        "outbound": "🎥 奈飞视频"
       },
       {
-        "geosite":"disney",
-        "outbound":"🏰 Disney"
-      },      
-      {
-        "geosite":"bilibili",
-        "outbound":"📺 Bilibili"
+        "geosite": "disney",
+        "outbound": "🏰 Disney"
       },
       {
-        "geosite":"steam",
-        "outbound":"🎮 Steam"
+        "geosite": "steam",
+        "outbound": "🎮 Steam"
       },
       {
-        "geosite":"epicgames",
-        "outbound":"🕹️ Epic"
-      },  
-      {
-        "geosite":"nvidia",
-        "outbound":"🎮 Nvidia"
+        "geosite": "epicgames",
+        "outbound": "🕹️ Epic"
       },
       {
-        "geosite":"microsoft",
-        "outbound":"🪟 Microsoft"
-      },      
-      {
-        "geosite":"openai",
-        "outbound":"🤖 OpenAI"
+        "geosite": "nvidia",
+        "outbound": "🎮 Nvidia"
       },
       {
-        "geosite":"apple",
-        "outbound":"🍎 Apple"
+        "geosite": "openai",
+        "outbound": "🤖 OpenAI"
       },
       {
-        "geoip": ["private","cn"],
+        "geosite": "gfw",
+        "outbound": "🌏 !cn"
+      },
+      {
+        "geosite": "microsoft",
+        "outbound": "🪟 Microsoft"
+      },
+      {
+        "geosite": "bilibili",
+        "outbound": "📺 Bilibili"
+      },
+      {
+        "geosite": "apple",
+        "outbound": "🍎 Apple"
+      },
+      {
+        "geosite": "proxy",
+        "outbound": "🌏 !cn"
+      },
+      {
+        "geosite": "geolocation-!cn",
+        "outbound": "🌏 !cn"
+      },
+      {
+        "geoip": [
+          "private",
+          "cn"
+        ],
         "outbound": "🌏 cn"
       },
       {
