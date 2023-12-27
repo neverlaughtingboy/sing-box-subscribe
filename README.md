@@ -437,11 +437,11 @@ windows系统建议将命令添加到批处理程序运行。
 感谢@SayRad的越南翻译
 # 操作说明去看[英文文档](https://github.com/Toperlock/sing-box-subscribe/blob/main/instructions/README.md)，中文文档操作说明不再提供
 
-# sing-box 1.8.0+ 已发布，配置需要修改。已上传rule_set模板，并且默认生成最新配置文件适配 sing-box 1.8.0。用旧版singbox请选择`config_template_groups_tun.json`模板
+### sing-box 1.8.0+ 已发布，配置需要修改。已上传rule_set模板，并且默认生成最新配置文件适配 sing-box 1.8.0。用旧版singbox请选择`config_template_groups_tun.json`模板
 
-## 使用 `/config/URL` 可以后面添加 `/&file=2` 参数选择 `config_template_groups_tun.json` 模板。两条订阅的形式也可以后面加 `/&file=2` 参数
+### 使用 `/config/URL` 可以后面添加 `/&file=2` 参数选择 `config_template_groups_tun.json` 模板。两条订阅的形式也可以后面加 `/&file=2` 参数
 
-## 根据已有的qx，surge，loon，clash规则列表自定义规则集[https://github.com/Toperlock/sing-box-geosite](https://github.com/Toperlock/sing-box-geosite)
+### 根据已有的qx，surge，loon，clash规则列表自定义规则集[https://github.com/Toperlock/sing-box-geosite](https://github.com/Toperlock/sing-box-geosite)
 
 ### wechat规则集源文件写法：
 ```json
@@ -457,11 +457,7 @@ windows系统建议将命令添加到批处理程序运行。
         "sgminorshort.wechat.com",
         "sgquic.wechat.com",
         "sgshort.wechat.com",
-        "tencentmap.wechat.com.com"
-      ]
-    },
-    {
-      "domain_suffix": [
+        "tencentmap.wechat.com.com",
         "qlogo.cn",
         "qpic.cn",
         "servicewechat.com",
@@ -474,6 +470,22 @@ windows系统建议将命令添加到批处理程序运行。
         "weixinbridge.com",
         "weixinsxy.com",
         "wxapp.tc.qq.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".qlogo.cn",
+        ".qpic.cn",
+        ".servicewechat.com",
+        ".tenpay.com",
+        ".wechat.com",
+        ".wechatlegal.net",
+        ".wechatpay.com",
+        ".weixin.com",
+        ".weixin.qq.com",
+        ".weixinbridge.com",
+        ".weixinsxy.com",
+        ".wxapp.tc.qq.com"
       ]
     },
     {

@@ -23,7 +23,10 @@ def parse(data):
             'server_name': netquery.get('sni', netquery.get('peer', ''))
         }
     }
-    if netquery.get('insecure') and netquery['insecure'] == '1' or netquery.get('allowInsecure') and netquery['allowInsecure'] == '1':
+    if netquery.get('insecure') == '1' or netquery.get('allowInsecure') == '1':
+        node['tls']['insecure'] = True
+    if node['tls']['server_name'] == '':
+        del node['tls']['server_name']
         node['tls']['insecure'] = True
     node['tls']['alpn'] = (netquery.get('alpn') or "h3").strip('{}').split(',')
     if netquery.get('obfs', '') not in ['none', '']:

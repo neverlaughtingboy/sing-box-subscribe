@@ -304,7 +304,7 @@
         {"action":"exclude","keywords":["Premium"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
+      "interval": "5m",
       "tolerance": 50
     },
     {
