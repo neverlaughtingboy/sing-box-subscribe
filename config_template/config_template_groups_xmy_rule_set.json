@@ -69,7 +69,7 @@
         "server": "proxyDns"
       }
     ],
-    "strategy": "prefer_ipv4"
+    "strategy": "ipv4_only"
   },
   "inbounds": [
     {
@@ -389,6 +389,18 @@
         "outbound": "direct"
       },
       {
+        "rule_set": "us_only",
+        "outbound": "🇺🇲 美国节点"
+      },
+      {
+        "rule_set": "customize_proxy",
+        "outbound": "proxy"
+      },
+      {
+        "rule_set": "customize_direct",
+        "outbound": "direct"
+      },
+      {
         "rule_set": "geosite-openai",
         "outbound": "🤖 OpenAI"
       },
@@ -446,6 +458,27 @@
       }
     ],
     "rule_set": [
+      {
+        "tag": "us_only",
+        "type": "remote",
+        "format": "source",
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/us_only.json",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "customize_proxy",
+        "type": "remote",
+        "format": "source",
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_proxy.json",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "customize_direct",
+        "type": "remote",
+        "format": "source",
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_direct.json",
+        "download_detour": "direct"
+      },
       {
         "tag": "geoip-netflix",
         "type": "remote",
