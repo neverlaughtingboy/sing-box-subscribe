@@ -462,22 +462,22 @@
         "tag": "us_only",
         "type": "remote",
         "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/us_only.json",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/neverlaughtingboy/AppAssist/master/rule/Sing-box/us_only.json",
+        "download_detour": "auto"
       },
       {
         "tag": "customize_proxy",
         "type": "remote",
         "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_proxy.json",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/neverlaughtingboy/AppAssist/master/rule/Sing-box/customize_proxy.json",
+        "download_detour": "auto"
       },
       {
         "tag": "customize_direct",
         "type": "remote",
         "format": "source",
-        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_direct.json",
-        "download_detour": "direct"
+        "url": "https://raw.githubusercontent.com/neverlaughtingboy/AppAssist/master/rule/Sing-box/customize_direct.json",
+        "download_detour": "auto"
       },
       {
         "tag": "geoip-netflix",
