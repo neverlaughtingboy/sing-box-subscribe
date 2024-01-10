@@ -486,13 +486,6 @@
         "download_detour": "auto"
       },
       {
-        "tag": "netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/bm7/Netflix.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "openai",
         "type": "remote",
         "format": "binary",
