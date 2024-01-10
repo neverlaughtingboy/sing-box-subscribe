@@ -76,10 +76,9 @@
     {
       "type": "tun",
       "inet4_address": "172.19.0.1/30",
-      "inet6_address": "fdfe:dcba:9876::1/126",
       "mtu": 9000,
       "auto_route": true,
-      "strict_route": false,
+      "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
       "stack": "system",
@@ -104,15 +103,45 @@
       "tag":"proxy",
       "type":"selector",
       "outbounds":[
-        "auto",
-        "direct",
+        "故障转移",
+        "direct"        
+      ]
+    },
+    {
+      "tag":"故障转移",
+      "type":"urltest",
+      "outbounds":[
+        "手动选择",
+        "可用节点"
+      ],   
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "1m",
+      "tolerance": 200
+    },     
+    {
+      "tag":"手动选择",
+      "type":"selector",
+      "outbounds":[
         "🇭🇰 香港节点",
         "🇯🇵 日本节点",
         "🇺🇲 美国节点",
         "🇸🇬 狮城节点",
         "🇨🇳 台湾节点"
       ]
-    },
+    },  
+    {
+      "tag":"可用节点",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"exclude","keywords":["Premium"]}
+      ],
+      "url": "http://1.1.1.1/generate_204",
+      "interval": "1m",
+      "tolerance": 200
+    },      
     {
       "tag":"🇭🇰 香港节点",
       "type":"selector",
@@ -283,43 +312,12 @@
       ]
     },
     {
-      "tag":"🌏 !cn",
-      "type":"selector",
-      "outbounds":[
-        "direct",
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇺🇲 美国节点",
-        "🇸🇬 狮城节点",
-        "🇨🇳 台湾节点"
-      ]
-    },
-    {
-      "tag":"🌏 cn",
-      "type":"selector",
-      "outbounds":[
-        "direct",
-        "proxy"
-      ]
-    },
-    {
       "tag":"🛑 AdBlock",
       "type":"selector",
       "outbounds":[
         "block",
         "direct"
       ]
-    },
-    {
-      "tag":"auto",
-      "type":"urltest",
-      "outbounds":[
-        "{all}"
-      ],
-      "url": "http://1.1.1.1/generate_204",
-      "interval": "5m",
-      "tolerance": 50
     },
     {
       "type": "direct",
@@ -336,7 +334,7 @@
   ],
   "route": {
     "auto_detect_interface": true,
-    "final": "proxy",
+    "final": "direct",
     "rules": [
       {
         "type": "logical",
@@ -443,19 +441,19 @@
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "outbound": "🌏 !cn"
+        "outbound": "proxy"
       },
       {
         "ip_is_private": true,
-        "outbound": "🌏 cn"
+        "outbound": "direct"
       },
       {
         "rule_set": "geoip-cn",
-        "outbound": "🌏 cn"
+        "outbound": "direct"
       },
       {
         "rule_set": "geosite-cn",
-        "outbound": "🌏 cn"
+        "outbound": "direct"
       }
     ],
     "rule_set": [
