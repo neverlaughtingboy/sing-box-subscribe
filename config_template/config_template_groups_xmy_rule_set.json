@@ -105,6 +105,9 @@
       "outbounds":[
         "故障转移",
         "direct"        
+      ],
+      "filter":[
+        {"action":"include","keywords":["故障转移|direct"]}
       ]
     },
     {
