@@ -9,7 +9,7 @@
       "external_ui": "sing-box-data/ui",
       "secret": "",
       "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip",
-      "external_ui_download_detour": "",
+      "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
   "cache_file": {
@@ -70,6 +70,7 @@
         "server": "proxyDns"
       }
     ],
+    "final": "localDns",
     "strategy": "ipv4_only"
   },
   "inbounds": [
