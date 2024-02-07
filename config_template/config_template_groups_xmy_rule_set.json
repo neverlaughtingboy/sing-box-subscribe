@@ -53,10 +53,6 @@
         "server": "fakeip"
       },
       {
-        "rule_set": "ads",
-        "server": "block"
-      },
-      {
         "outbound": "any",
         "server": "localDns",
         "disable_cache": true
@@ -354,14 +350,6 @@
       ]
     },
     {
-      "tag":"🛑 AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
-      ]
-    },
-    {
       "type": "direct",
       "tag": "direct"
     },
@@ -386,10 +374,6 @@
         "network": "udp",
         "port": 443,
         "outbound": "block"
-      },
-      {
-        "rule_set": "ads",
-        "outbound": "🛑 AdBlock"
       },
       {
         "clash_mode": "direct",
@@ -577,13 +561,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Global.srs",
-        "download_detour": "proxy"
-      },
-      {
-        "tag": "ads",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Advertising.srs",
         "download_detour": "proxy"
       }
     ]
