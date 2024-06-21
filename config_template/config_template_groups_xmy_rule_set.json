@@ -58,7 +58,7 @@
         "disable_cache": true
       },
       {
-        "rule_set": "china-max",
+        "rule_set": "geosite-cn",
         "server": "localDns"
       },   
       {
@@ -79,7 +79,7 @@
         "rewrite_ttl": 1
       },
       {
-        "rule_set": "global-max",
+        "rule_set": "geosite-geolocation-!cn",
         "server": "proxyDns"
       }
     ],
@@ -417,7 +417,7 @@
         "outbound": "📺 Bilibili"
       },
       {
-        "rule_set": "global-max",
+        "rule_set": "geosite-geolocation-!cn",
         "outbound": "proxy"
       },      
       {
@@ -445,7 +445,7 @@
         "outbound": "direct"
       },
       {
-        "rule_set": "china-max",
+        "rule_set": "geosite-cn",
         "outbound": "direct"
       }
     ],
@@ -454,106 +454,106 @@
         "tag": "us_only",
         "type": "remote",
         "format": "source",
-        "url": "https://raw.githubusercontent.com/neverlaughtingboy/AppAssist/master/rule/Sing-box/us_only.json",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/us_only.json",
+        "download_detour": "direct"
       },
       {
         "tag": "customize_proxy",
         "type": "remote",
         "format": "source",
-        "url": "https://raw.githubusercontent.com/neverlaughtingboy/AppAssist/master/rule/Sing-box/customize_proxy.json",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_proxy.json",
+        "download_detour": "direct"
       },
       {
         "tag": "customize_direct",
         "type": "remote",
         "format": "source",
-        "url": "https://raw.githubusercontent.com/neverlaughtingboy/AppAssist/master/rule/Sing-box/customize_direct.json",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_direct.json",
+        "download_detour": "direct"
       },
       {
         "tag": "openai",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/OpenAI.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/openai.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "apple",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Apple.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "microsoft",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Microsoft.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "bilibili",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/BiliBili.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "steam",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Steam.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/steam.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "epic",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Epic.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/epicgames.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "netflix",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Netflix.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "disney",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Disney.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
+        "download_detour": "direct"
       },
       {
         "tag": "hbo",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/HBO.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.srs",
+        "download_detour": "direct"
       },      
       {
         "tag": "nvidia",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Nvidia.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/nvidia.srs",
+        "download_detour": "direct"
       },
       {
-        "tag": "china-max",
+        "tag": "geosite-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/ChinaMax.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+        "download_detour": "direct"
       },
       {
-        "tag": "global-max",
+        "tag": "geosite-geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/bm7/Global.srs",
-        "download_detour": "proxy"
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "direct"
       }
     ]
   }
