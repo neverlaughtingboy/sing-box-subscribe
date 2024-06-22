@@ -353,7 +353,7 @@
         "🇸🇬 狮城节点",
         "🇨🇳 台湾节点"
       ]
-  },
+    },
     {
       "type": "direct",
       "tag": "direct"
@@ -414,43 +414,43 @@
         "outbound": "🤖 OpenAI"
       },
       {
-        "rule_set": "netflix",
+        "rule_set": ["geosite-netflix","geoip-netflix"],
         "outbound": "🎥 奈飞视频"
       },
       {
-        "rule_set": "disney",
+        "rule_set": "geosite-disney",
         "outbound": "🏰 Disney"
       },
       {
-        "rule_set": "hbo",
+        "rule_set": "geosite-hbo",
         "outbound": "🎥 HBO"
       },      
       {
-        "rule_set": "bilibili",
+        "rule_set": ["geosite-bilibili","geoip-bilibili"],
         "outbound": "📺 Bilibili"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
+        "rule_set": ["geosite-geolocation-!cn","geoip-facebook","geoip-google","geoip-telegram","geoip-twitter"],
         "outbound": "proxy"
       },      
       {
-        "rule_set": "steam",
+        "rule_set": "geosite-steam",
         "outbound": "🎮 Steam"
       },
       {
-        "rule_set": "epic",
+        "rule_set": "geosite-epicgames",
         "outbound": "🕹️ Epic"
       },
       {
-        "rule_set": "nvidia",
+        "rule_set": "geosite-nvidia",
         "outbound": "🎮 Nvidia"
       },
       {
-        "rule_set": "apple",
+        "rule_set": ["geosite-apple", "geoip-apple"],
         "outbound": "🍎 Apple"
       },     
       {
-        "rule_set": "microsoft",
+        "rule_set": "geosite-microsoft",
         "outbound": "🪟 Microsoft"
       },
       {
@@ -458,7 +458,7 @@
         "outbound": "direct"
       },
       {
-        "rule_set": "geosite-cn",
+        "rule_set": ["geosite-cn","geoip-cn"],
         "outbound": "direct"
       }
     ],
@@ -492,66 +492,115 @@
         "download_detour": "direct"
       },
       {
-        "tag": "apple",
+        "tag": "geosite-apple",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "microsoft",
+        "tag": "geoip-apple",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo-lite/geoip/apple.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-microsoft",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/microsoft.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "bilibili",
+        "tag": "geosite-bilibili",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "steam",
+        "tag": "geoip-bilibili",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo-lite/geoip/bilibili.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-steam",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/steam.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "epic",
+        "tag": "geosite-epicgames",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/epicgames.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "netflix",
+        "tag": "geosite-netflix",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/netflix.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "disney",
+        "tag": "geoip-netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/netflix.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-disney",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
         "download_detour": "direct"
       },
       {
-        "tag": "hbo",
+        "tag": "geosite-hbo",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.srs",
         "download_detour": "direct"
       },      
       {
-        "tag": "nvidia",
+        "tag": "geosite-nvidia",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/nvidia.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-facebook",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/facebook.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/google.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-telegram",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/telegram.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-twitter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/twitter.srs",
         "download_detour": "direct"
       },
       {
@@ -559,6 +608,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo-lite/geoip/cn.srs",
         "download_detour": "direct"
       },
       {
