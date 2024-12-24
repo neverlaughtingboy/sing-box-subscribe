@@ -91,7 +91,9 @@
     {
       "tag": "tun",
       "type": "tun",
-      "inet4_address": "172.19.0.0/30",
+      "address": [
+        "172.19.0.0/30"
+      ],
       "stack": "system",
       "auto_route": true,
       "sniff": true,
