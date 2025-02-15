@@ -1,102 +1,101 @@
 {
   "log": {
-    "level": "debug",
+    "level": "info",
     "timestamp": true
   },
   "experimental": {
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
-      "external_ui": "sing-box-data/ui",
+      "external_ui": "ui",
       "secret": "",
-      "external_ui_download_url": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "direct",
       "default_mode": "rule"
     },
   "cache_file": {
     "enabled": true,
     "store_fakeip": true,
-    "path": "sing-box-data/cache.db"
+    "store_rdrc": true
     }
   },
   "dns": {
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15"
-    },
     "servers": [
       {
-        "tag": "proxyDns",
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "proxy"
+        "tag": "google",
+        "type": "tls",
+        "server": "8.8.8.8"
       },
       {
-        "tag": "localDns",
-        "address": "https://120.53.53.53/dns-query",
+        "tag": "local",
+        "type": "https",
+        "server": "223.5.5.5",
         "detour": "direct"
       },
       {
         "tag": "fakeip",
-        "address": "fakeip"
-      },
-      {
-        "tag": "block",
-        "address": "rcode://success"
+        "type": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
       }
     ],
     "rules": [
       {
-        "domain": [
-          "ghproxy.com",
-          "cdn.jsdelivr.net",
-          "testingcf.jsdelivr.net"
-        ],
-        "server": "fakeip"
-      },
-      {
-        "outbound": "any",
-        "server": "localDns",
-        "disable_cache": true
-      },
-      {
-        "rule_set": "geosite-cn",
-        "server": "localDns"
-      },   
-      {
         "clash_mode": "direct",
-        "server": "localDns"
+        "server": "local"
       },
       {
         "clash_mode": "global",
-        "server": "proxyDns"
+        "server": "google"
       },
       {
-        "inbound": "tun",
         "query_type": [
           "A",
           "AAAA"
         ],
-        "server": "fakeip",
-        "rewrite_ttl": 1
+        "rule_set": "geosite-cn",
+        "server": "fakeip"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
-        "server": "proxyDns"
+        "rule_set": "geosite-cn",
+        "server": "local"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "google",
+        "client_subnet": "114.114.114.114/24"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip"
       }
     ],
-    "final": "localDns",
-    "strategy": "ipv4_only",
-    "independent_cache": true
+    "independent_cache": true,
+    "strategy": "prefer_ipv4"
   },
   "inbounds": [
     {
-      "tag": "tun",
+      "tag": "tun-in",
       "type": "tun",
       "address": [
-        "172.19.0.0/30"
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
       ],
       "stack": "system",
       "auto_route": true,
-      "sniff": true,
+      "strict_route": true,
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -106,11 +105,10 @@
       }
     },
     {
-      "tag": "mixed",
+      "tag": "mixed-in",
       "type": "mixed",
       "listen": "127.0.0.1",
-      "listen_port": 7890,
-      "sniff": true
+      "listen_port": 7890
     }
   ],
   "outbounds": [
@@ -370,17 +368,28 @@
     }
   ],
   "route": {
+    "default_domain_resolver": {
+      "server": "local"
+    },
     "auto_detect_interface": true,
     "final": "🐟 漏网之鱼",
     "rules": [
       {
-        "protocol": "dns",
-        "outbound": "dns-out"
+        "inbound": ["tun-in", "mixed-in"],
+        "action": "sniff"
       },
       {
-        "network": "udp",
-        "port": 443,
-        "outbound": "block"
+        "type": "logical",
+        "mode": "or",
+        "rules":[
+          {
+            "port":53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
       },
       {
         "clash_mode": "direct",
@@ -388,7 +397,7 @@
       },
       {
         "clash_mode": "global",
-        "outbound": "proxy"
+        "outbound": "Proxy"
       },
       {
         "domain": [
@@ -397,6 +406,10 @@
           "yacd.haishan.me",
           "d.metacubex.one"
         ],
+        "outbound": "direct"
+      },
+      {
+        "ip_is_private": true,
         "outbound": "direct"
       },
       {
