@@ -33,27 +33,31 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "localDns"
+        "server": "localDns",
+        "strategy": "prefer_ipv6"
       },
       {
         "rule_set": "geosite-cn",
-        "server": "localDns"
+        "server": "localDns",
+        "strategy": "prefer_ipv6"
       },   
       {
         "clash_mode": "direct",
-        "server": "localDns"
+        "server": "localDns",
+        "strategy": "prefer_ipv6"
       },
       {
         "clash_mode": "global",
-        "server": "proxyDns"
+        "server": "proxyDns",
+        "strategy": "ipv4_only"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "server": "proxyDns"
+        "server": "proxyDns",
+        "strategy": "ipv4_only"
       }
     ],
-    "independent_cache": true,
-    "strategy": "prefer_ipv6"
+    "independent_cache": true
   },
   "inbounds": [
     {
