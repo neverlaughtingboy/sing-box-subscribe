@@ -22,39 +22,36 @@
       {
         "tag": "google",
         "address": "tls://8.8.8.8",
-        "detour": "proxy"
+        "detour": "proxy",
+        "strategy": "ipv4_only"
       },
       {
         "tag": "localDns",
         "address": "https://223.5.5.5/dns-query",
-        "detour": "direct"
+        "detour": "direct",
+        "strategy": "prefer_ipv6"
       }
     ],
     "rules": [
       {
         "outbound": "any",
-        "server": "localDns",
-        "strategy": "prefer_ipv6"
+        "server": "localDns"
       },
       {
         "rule_set": "geosite-cn",
-        "server": "localDns",
-        "strategy": "prefer_ipv6"
+        "server": "localDns"
       },   
       {
         "clash_mode": "direct",
-        "server": "localDns",
-        "strategy": "prefer_ipv6"
+        "server": "localDns"
       },
       {
         "clash_mode": "global",
-        "server": "proxyDns",
-        "strategy": "ipv4_only"
+        "server": "proxyDns"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
-        "server": "proxyDns",
-        "strategy": "ipv4_only"
+        "server": "proxyDns"
       }
     ],
     "independent_cache": true
