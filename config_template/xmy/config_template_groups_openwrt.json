@@ -389,7 +389,7 @@
         "outbound": "📺 Bilibili"
       },
       {
-        "rule_set": ["geosite-geolocation-!cn","geoip-facebook","geoip-google","geoip-telegram","geoip-twitter"],
+        "rule_set": ["geoip-facebook","geoip-google","geoip-telegram","geoip-twitter"],
         "outbound": "proxy"
       },      
       {
