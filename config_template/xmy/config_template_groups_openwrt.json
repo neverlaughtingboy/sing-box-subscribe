@@ -169,17 +169,6 @@
       ]
     }, 
     {
-      "tag":"🇹🇷 土耳其节点",
-      "type":"selector",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-        {"action":"include","keywords":["Turkey"]},
-        {"action":"exclude","keywords":["Premium"]}
-      ]
-    },    
-    {
       "tag":"🎥 奈飞视频",
       "type":"selector",
       "outbounds":[
