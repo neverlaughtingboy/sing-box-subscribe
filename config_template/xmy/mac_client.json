@@ -409,6 +409,10 @@
         "outbound": "direct"
       },
       {
+        "rule_set": "geosite-geolocation-!cn",
+        "outbound": "proxy"
+      },      
+      {
         "rule_set": ["geosite-cn","geoip-cn"],
         "outbound": "direct"
       }
