@@ -286,6 +286,18 @@
       ]
     },
     {
+      "tag":"🤖 Claude",
+      "type":"selector",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"include","keywords":["新加坡|坡|狮城|SG|Singapore"]},
+        {"action":"include","keywords":["DIP"]},
+        {"action":"exclude","keywords":["Premium"]}
+      ]
+    }, 
+    {
       "type": "selector",
       "tag": "🐟 漏网之鱼",
       "outbounds": [
@@ -362,6 +374,10 @@
         "outbound": "🤖 OpenAI"
       },
       {
+        "rule_set": ["claude","claude_additional"],
+        "outbound": "🤖 Claude"
+      },      
+      {
         "rule_set": ["geosite-netflix","geoip-netflix"],
         "outbound": "🎥 奈飞视频"
       },
@@ -436,6 +452,20 @@
         "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/customize_direct.json",
         "download_detour": "direct"
       },
+      {
+        "tag": "claude",
+        "type": "remote",
+        "format": "source",
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/sing-box-geosite@main/my_rule/Claude.json",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "claude_additional",
+        "type": "remote",
+        "format": "source",
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/sing-box-geosite@main/my_rule/ClaudeAdditional.json",
+        "download_detour": "direct"
+      },      
       {
         "tag": "openai",
         "type": "remote",
