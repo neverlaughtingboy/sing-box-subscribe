@@ -282,7 +282,7 @@
       ]
     },    
     {
-      "tag":"🤖 OpenAI",
+      "tag":"🤖 AI",
       "type":"selector",
       "outbounds":[
         "🇺🇲 美国节点"
@@ -361,9 +361,9 @@
         "outbound": "direct"
       },
       {
-        "rule_set": "openai",
-        "outbound": "🤖 OpenAI"
-      },
+        "rule_set": ["openai","my_cursor"],
+        "outbound": "🤖 AI"
+      },    
       {
         "rule_set": ["geosite-netflix","geoip-netflix"],
         "outbound": "🎥 奈飞视频"
@@ -425,6 +425,13 @@
         "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/us_only.json",
         "download_detour": "direct"
       },
+      {
+        "tag": "my_cursor",
+        "type": "remote",
+        "format": "source",
+        "url": "https://testingcf.jsdelivr.net/gh/neverlaughtingboy/AppAssist@master/rule/Sing-box/cursor.json",
+        "download_detour": "direct"
+      },      
       {
         "tag": "customize_proxy",
         "type": "remote",
