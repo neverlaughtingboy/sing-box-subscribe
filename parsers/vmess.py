@@ -22,8 +22,7 @@ def parse(data):
                 'server_port': int(_path[1].split(":")[1]),
                 'uuid': _path[0].split(":")[-1],
                 'security': _path[0].split(":")[0] if ':' in _path[0] else 'auto',
-                'alter_id': int(netquery.get('alterId','0')),
-                'packet_encoding': 'xudp'
+                'alter_id': int(netquery.get('alterId','0'))
             }
             if (netquery.get('tls') and netquery['tls'] != '') or (netquery.get('security') == 'tls'):
                 node['tls']={
@@ -74,8 +73,7 @@ def parse(data):
         'server_port': int(item.get('port')),
         'uuid': item.get('id'),
         'security': item.get('scy') if item.get('scy') not in ['http', None] else 'auto',
-        'alter_id': int(item["aid"] if item.get("aid") else '0'),
-        'packet_encoding': 'xudp'
+        'alter_id': int(item["aid"] if item.get("aid") else '0')
     }
     if node['security'] == 'gun':
         node['security'] = 'auto'
@@ -148,3 +146,4 @@ def parse(data):
         if item.get('padding') == True:
             node['multiplex']['padding'] = True
     return node
+
