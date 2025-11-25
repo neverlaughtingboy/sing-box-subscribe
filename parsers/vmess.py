@@ -94,9 +94,6 @@ def parse(data):
             }
     if item.get("net"):
         if item['net'] in ['h2', 'http', 'tcp']:
-            node['transport'] = {
-                'type':'http'
-            }
             if item.get('headers'):
                 node['transport']['headers'] = item['headers']
             if item.get('host'):
@@ -146,4 +143,5 @@ def parse(data):
         if item.get('padding') == True:
             node['multiplex']['padding'] = True
     return node
+
 
