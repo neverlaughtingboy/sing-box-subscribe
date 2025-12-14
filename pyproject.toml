@@ -18,3 +18,12 @@ dependencies = [
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# 关闭自动包发现，只使用依赖安装能力
+py-modules = []
+
+# 或者如果你以后真的要把某个目录当包发布，可以改成：
+# [tool.setuptools.packages.find]
+# where = ["."]
+# include = ["parsers*"]  # 只把 parsers 当成包
