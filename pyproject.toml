@@ -1,0 +1,20 @@
+[project]
+name = "sing-box-subscribe"
+version = "0.1.0"
+description = "sing-box-subscribe deployment on Vercel"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "requests",
+    "paramiko",
+    "scp",
+    "chardet",
+    "PyYAML",
+    "ruamel.yaml",
+    "Flask==2.3.2",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
